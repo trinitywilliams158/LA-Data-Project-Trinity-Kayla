@@ -26,10 +26,26 @@ function getLADataFromAPI(){
          })
        }
        filteredData.forEach(function(item){
-           finalHTML +=
-           `
-            <h2>This is at ${item.location_common_name}</h2>
-           `
+        var cardItem = 
+        `
+                 <div class="col s6 m6">
+                   <div class="card">
+                     <div class="card-image">
+                       <img src=http://images.all-free-download.com/images/graphicthumb/tulip_flower_garden_197260.jpg>
+                       <span class="card-title"> ${item.location_common_name}</span>
+                     </div>
+                     <div class="card-content">
+                       <p>I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                     </div>
+                     <div class="card-action">
+                       <a href="#">This is a link</a>
+                     </div>
+                   </div>
+                 </div>
+        
+        `
+           finalHTML += cardItem
        })
        resultDiv.innerHTML = finalHTML
    })
